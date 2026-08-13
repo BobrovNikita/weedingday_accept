@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f8f3ec">
-  <meta name="description" content="Свадебное приглашение Никиты и Виктории — 5 сентября 2026 года">
+  <meta name="description" content="Подтверждение присутствия на свадьбе Никиты и Виктории — 5 сентября 2026 года">
 
-  <title>Никита & Виктория — 05.09.2026</title>
+  <title>Подтверждение присутствия — Никита & Виктория</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,105 +105,13 @@
       font-weight:300;
     }
 
-    /* ================= HERO ================= */
-
-    .hero{
-      min-height:100svh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#fff;
-      text-align:center;
-      background:
-        linear-gradient(180deg,rgba(25,25,22,.30),rgba(25,25,22,.46)),
-        url("https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=2200&q=88") center/cover no-repeat;
-    }
-
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:radial-gradient(circle at center,transparent 25%,rgba(0,0,0,.16) 100%);
-      pointer-events:none;
-    }
-
-    .hero-inner{
-      position:relative;
-      z-index:1;
-      width:min(100%,820px);
-      padding:50px 18px 80px;
-      animation:heroReveal 1.15s ease both;
-    }
-
-    .hero-personal{
-      margin-bottom:18px;
-      font-size:12px;
-      letter-spacing:.22em;
-      text-transform:uppercase;
-      opacity:.9;
-    }
-
-    .hero h1{
-      font-family:'Playfair Display',serif;
-      font-size:clamp(48px,8vw,96px);
-      font-weight:400;
-      line-height:.98;
-      text-shadow:0 2px 24px rgba(0,0,0,.12);
-    }
-
-    .hero-subtitle{
-      margin-top:18px;
-      font-family:'Playfair Display',serif;
-      font-size:clamp(18px,2.4vw,25px);
-      font-style:italic;
-      opacity:.95;
-    }
-
-    .hero-date{
-      margin-top:28px;
-      font-size:13px;
-      font-weight:400;
-      letter-spacing:.34em;
-    }
-
-    .open-invite{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-width:210px;
-      margin-top:32px;
-      padding:15px 24px;
-      border:1px solid rgba(255,255,255,.62);
-      border-radius:999px;
-      color:#fff;
-      background:rgba(255,255,255,.10);
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
-      text-decoration:none;
-      font-size:13px;
-      letter-spacing:.08em;
-      transition:.25s ease;
-    }
-
-    .open-invite:hover{
-      transform:translateY(-2px);
-      background:rgba(255,255,255,.18);
-    }
-
-    .scroll-arrow{
-      position:absolute;
-      z-index:2;
-      left:50%;
-      bottom:24px;
-      transform:translateX(-50%);
-      font-size:30px;
-      opacity:.82;
-      animation:arrow 1.6s infinite;
-    }
 
     /* ================= ОБРАЩЕНИЕ ================= */
 
     .invitation{
+      min-height:100svh;
+      display:flex;
+      align-items:center;
       background:
         radial-gradient(circle at 10% 0%,rgba(214,223,202,.55),transparent 30%),
         var(--ivory);
@@ -247,6 +155,11 @@
       font-size:17px;
       font-weight:300;
       line-height:1.85;
+    }
+
+    .invitation-copy strong{
+      color:var(--olive-dark);
+      font-weight:500;
     }
 
     .signature{
@@ -535,39 +448,11 @@
       transform:none;
     }
 
-    @keyframes heroReveal{
-      from{
-        opacity:0;
-        transform:translateY(28px);
-      }
-      to{
-        opacity:1;
-        transform:none;
-      }
-    }
-
-    @keyframes arrow{
-      0%,100%{
-        transform:translate(-50%,0);
-      }
-      50%{
-        transform:translate(-50%,10px);
-      }
-    }
-
     /* ================= MOBILE ================= */
 
     @media (max-width:760px){
       section{
         padding:72px 18px;
-      }
-
-      .hero-inner{
-        padding-inline:8px;
-      }
-
-      .hero-date{
-        letter-spacing:.23em;
       }
 
       .invitation-card{
@@ -589,9 +474,6 @@
     }
 
     @media (max-width:390px){
-      .hero h1{
-        font-size:48px;
-      }
 
       .guest-greeting{
         font-size:36px;
@@ -626,29 +508,9 @@
 <body>
 <div class="page">
 
-  <!-- ================= HERO ================= -->
-  <section class="hero" id="top">
-    <div class="hero-inner">
-      <div class="hero-personal">Свадебное приглашение</div>
-
-      <h1>Никита <span aria-hidden="true">&</span> Виктория</h1>
-
-      <div class="hero-subtitle">
-        приглашаем вас разделить с нами этот день
-      </div>
-
-      <div class="hero-date">05 · 09 · 2026</div>
-
-      <a class="open-invite" href="#invitation">
-        Открыть приглашение
-      </a>
-    </div>
-
-    <div class="scroll-arrow" aria-hidden="true">⌄</div>
-  </section>
 
 
-  <!-- ================= ОБРАЩЕНИЕ ================= -->
+  <!-- ================= ПЕРСОНАЛЬНОЕ ОБРАЩЕНИЕ ================= -->
   <section class="invitation" id="invitation">
     <div class="container reveal">
       <div class="invitation-card">
@@ -664,9 +526,10 @@
         </h2>
 
         <p class="invitation-copy">
-          С огромным удовольствием приглашаем вас разделить с нами один из самых
-          особенных дней нашей жизни — день, когда мы скажем друг другу «да».
-          Нам будет очень приятно провести этот праздник рядом с вами.
+          До нашей свадьбы осталось совсем немного. Нам будет очень приятно
+          провести этот особенный день рядом с вами. Ниже мы оставили несколько
+          важных деталей и просим подтвердить, сможете ли вы быть с нами
+          <strong>5 сентября</strong>.
         </p>
 
         <div class="signature">
