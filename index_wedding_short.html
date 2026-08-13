@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f8f3ec">
+  <meta name="description" content="Свадебное приглашение Никиты и Виктории — 5 сентября 2026 года">
+
+  <title>Никита & Виктория — 05.09.2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ivory:#fbf8f3;
+      --paper:#fffdf9;
+      --sage:#d6dfca;
+      --sage-soft:#edf1e8;
+      --olive:#6f7e61;
+      --olive-dark:#59694d;
+      --brown:#806a5b;
+      --text:#2b2926;
+      --muted:#817b74;
+      --line:rgba(71,66,58,.14);
+      --shadow:0 18px 50px rgba(70,62,51,.10);
+      --radius:28px;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Manrope',sans-serif;
+      color:var(--text);
+      background:#e8e2da;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    button,input,textarea{
+      font:inherit;
+    }
+
+    button{
+      border:0;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .page{
+      width:min(100%,1500px);
+      margin:0 auto;
+      background:var(--ivory);
+      overflow:hidden;
+      box-shadow:0 0 80px rgba(0,0,0,.08);
+    }
+
+    section{
+      position:relative;
+      padding:96px 28px;
+    }
+
+    .container{
+      width:min(100%,1040px);
+      margin:0 auto;
+    }
+
+    .center{
+      text-align:center;
+    }
+
+    .eyebrow{
+      margin-bottom:12px;
+      color:var(--olive-dark);
+      font-size:12px;
+      font-weight:500;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+    }
+
+    h2{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(34px,4vw,52px);
+      font-weight:400;
+      line-height:1.12;
+    }
+
+    .lead{
+      max-width:680px;
+      margin:20px auto 0;
+      color:var(--muted);
+      font-size:16px;
+      font-weight:300;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+      min-height:100svh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      text-align:center;
+      background:
+        linear-gradient(180deg,rgba(25,25,22,.30),rgba(25,25,22,.46)),
+        url("https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=2200&q=88") center/cover no-repeat;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at center,transparent 25%,rgba(0,0,0,.16) 100%);
+      pointer-events:none;
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      width:min(100%,820px);
+      padding:50px 18px 80px;
+      animation:heroReveal 1.15s ease both;
+    }
+
+    .hero-personal{
+      margin-bottom:18px;
+      font-size:12px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      opacity:.9;
+    }
+
+    .hero h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(48px,8vw,96px);
+      font-weight:400;
+      line-height:.98;
+      text-shadow:0 2px 24px rgba(0,0,0,.12);
+    }
+
+    .hero-subtitle{
+      margin-top:18px;
+      font-family:'Playfair Display',serif;
+      font-size:clamp(18px,2.4vw,25px);
+      font-style:italic;
+      opacity:.95;
+    }
+
+    .hero-date{
+      margin-top:28px;
+      font-size:13px;
+      font-weight:400;
+      letter-spacing:.34em;
+    }
+
+    .open-invite{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:210px;
+      margin-top:32px;
+      padding:15px 24px;
+      border:1px solid rgba(255,255,255,.62);
+      border-radius:999px;
+      color:#fff;
+      background:rgba(255,255,255,.10);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      text-decoration:none;
+      font-size:13px;
+      letter-spacing:.08em;
+      transition:.25s ease;
+    }
+
+    .open-invite:hover{
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.18);
+    }
+
+    .scroll-arrow{
+      position:absolute;
+      z-index:2;
+      left:50%;
+      bottom:24px;
+      transform:translateX(-50%);
+      font-size:30px;
+      opacity:.82;
+      animation:arrow 1.6s infinite;
+    }
+
+    /* ================= ОБРАЩЕНИЕ ================= */
+
+    .invitation{
+      background:
+        radial-gradient(circle at 10% 0%,rgba(214,223,202,.55),transparent 30%),
+        var(--ivory);
+    }
+
+    .invitation-card{
+      width:min(100%,820px);
+      margin:0 auto;
+      padding:70px 62px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:rgba(255,253,249,.88);
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+
+    .monogram{
+      width:64px;
+      height:64px;
+      margin:0 auto 24px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(111,126,97,.34);
+      border-radius:50%;
+      color:var(--olive-dark);
+      font-family:'Playfair Display',serif;
+      font-size:20px;
+    }
+
+    .guest-greeting{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(34px,5vw,52px);
+      font-weight:400;
+      line-height:1.15;
+    }
+
+    .invitation-copy{
+      max-width:630px;
+      margin:26px auto 0;
+      color:#5f5a54;
+      font-size:17px;
+      font-weight:300;
+      line-height:1.85;
+    }
+
+    .signature{
+      margin-top:30px;
+      color:var(--brown);
+      font-family:'Playfair Display',serif;
+      font-size:26px;
+      font-style:italic;
+    }
+
+    /* ================= ДЕТАЛИ ================= */
+
+    .details-section{
+      background:var(--sage-soft);
+    }
+
+    .details-card{
+      width:min(100%,860px);
+      margin:42px auto 0;
+      padding:56px 58px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:var(--paper);
+      box-shadow:var(--shadow);
+    }
+
+    .cheddar-photo{
+      width:128px;
+      height:128px;
+      margin:0 auto 24px;
+      padding:5px;
+      border-radius:50%;
+      background:#fff;
+      box-shadow:0 12px 28px rgba(75,63,51,.16);
+    }
+
+    .cheddar-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center 35%;
+      border-radius:50%;
+    }
+
+    .details-text{
+      max-width:680px;
+      margin:0 auto;
+      color:#5e5952;
+      font-size:16px;
+      font-weight:300;
+      line-height:1.8;
+    }
+
+    .details-text strong{
+      color:var(--olive-dark);
+      font-weight:500;
+    }
+
+    .cheddar-note{
+      margin-top:18px;
+      color:var(--brown);
+      font-family:'Playfair Display',serif;
+      font-size:20px;
+      font-style:italic;
+    }
+
+    .details-divider{
+      width:70px;
+      height:1px;
+      margin:36px auto;
+      background:rgba(111,126,97,.28);
+    }
+
+    .dress-reminder{
+      max-width:680px;
+      margin:0 auto;
+    }
+
+    .dress-reminder h3{
+      color:var(--olive-dark);
+      font-family:'Playfair Display',serif;
+      font-size:30px;
+      font-weight:400;
+    }
+
+    .dress-reminder p{
+      max-width:610px;
+      margin:14px auto 0;
+      color:#5e5952;
+      font-size:15px;
+      font-weight:300;
+      line-height:1.75;
+    }
+
+    .colors{
+      display:flex;
+      justify-content:center;
+      gap:13px;
+      flex-wrap:wrap;
+      margin-top:24px;
+    }
+
+    .color{
+      width:44px;
+      height:44px;
+      border:3px solid rgba(255,255,255,.9);
+      border-radius:50%;
+      box-shadow:0 7px 18px rgba(55,54,49,.13);
+    }
+
+    /* ================= RSVP ================= */
+
+    .rsvp-section{
+      background:
+        radial-gradient(circle at 90% 10%,rgba(214,223,202,.56),transparent 28%),
+        var(--ivory);
+    }
+
+    .rsvp-card{
+      width:min(100%,720px);
+      margin:42px auto 0;
+      padding:48px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:var(--paper);
+      box-shadow:var(--shadow);
+      text-align:left;
+    }
+
+    .rsvp-invited{
+      margin-bottom:24px;
+      padding:16px 18px;
+      border-radius:16px;
+      background:var(--sage-soft);
+      color:var(--olive-dark);
+      font-size:14px;
+      text-align:center;
+    }
+
+    .field-label{
+      display:block;
+      margin:22px 0 10px;
+      font-size:13px;
+      font-weight:500;
+    }
+
+    .choices{
+      display:grid;
+      gap:10px;
+    }
+
+    .choice{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:15px 16px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+
+    .choice:hover{
+      border-color:rgba(111,126,97,.45);
+    }
+
+    .choice input{
+      width:18px;
+      height:18px;
+      accent-color:var(--olive);
+      flex:0 0 auto;
+    }
+
+    .choice.decline{
+      margin-top:10px;
+      color:#77716a;
+      background:#faf8f5;
+    }
+
+    textarea,
+    .fallback-name{
+      width:100%;
+      padding:15px 16px;
+      border:1px solid #d9d4cc;
+      border-radius:14px;
+      outline:none;
+      color:var(--text);
+      background:#fff;
+      transition:.2s ease;
+    }
+
+    textarea{
+      min-height:100px;
+      resize:vertical;
+    }
+
+    textarea:focus,
+    .fallback-name:focus{
+      border-color:var(--olive);
+      box-shadow:0 0 0 3px rgba(111,126,97,.10);
+    }
+
+    .submit-btn{
+      width:100%;
+      margin-top:24px;
+      padding:16px 22px;
+      border-radius:999px;
+      color:#fff;
+      background:var(--olive);
+      cursor:pointer;
+      font-weight:500;
+      transition:.2s ease;
+    }
+
+    .submit-btn:hover{
+      background:var(--olive-dark);
+      transform:translateY(-1px);
+    }
+
+    .submit-btn:disabled{
+      opacity:.6;
+      cursor:wait;
+      transform:none;
+    }
+
+    .form-message{
+      min-height:22px;
+      margin-top:14px;
+      color:#a54b4b;
+      font-size:13px;
+      text-align:center;
+    }
+
+    .success-box{
+      padding:30px 18px 12px;
+      text-align:center;
+    }
+
+    .success-box .heart{
+      margin-bottom:10px;
+      color:var(--olive);
+      font-family:'Playfair Display',serif;
+      font-size:42px;
+    }
+
+    .success-box h3{
+      font-family:'Playfair Display',serif;
+      font-size:30px;
+      font-weight:400;
+    }
+
+    .success-box p{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .honeypot{
+      position:absolute!important;
+      left:-9999px!important;
+      width:1px!important;
+      height:1px!important;
+      opacity:0!important;
+      pointer-events:none!important;
+    }
+
+    .footer-note{
+      margin-top:56px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+      letter-spacing:.08em;
+    }
+
+    /* ================= ANIMATION ================= */
+
+    .reveal{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity .8s ease,transform .8s ease;
+    }
+
+    .reveal.show{
+      opacity:1;
+      transform:none;
+    }
+
+    @keyframes heroReveal{
+      from{
+        opacity:0;
+        transform:translateY(28px);
+      }
+      to{
+        opacity:1;
+        transform:none;
+      }
+    }
+
+    @keyframes arrow{
+      0%,100%{
+        transform:translate(-50%,0);
+      }
+      50%{
+        transform:translate(-50%,10px);
+      }
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width:760px){
+      section{
+        padding:72px 18px;
+      }
+
+      .hero-inner{
+        padding-inline:8px;
+      }
+
+      .hero-date{
+        letter-spacing:.23em;
+      }
+
+      .invitation-card{
+        padding:48px 24px;
+      }
+
+      .invitation-copy{
+        font-size:16px;
+        line-height:1.75;
+      }
+
+      .details-card{
+        padding:42px 24px;
+      }
+
+      .rsvp-card{
+        padding:30px 20px;
+      }
+    }
+
+    @media (max-width:390px){
+      .hero h1{
+        font-size:48px;
+      }
+
+      .guest-greeting{
+        font-size:36px;
+      }
+
+      .color{
+        width:39px;
+        height:39px;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      html{
+        scroll-behavior:auto;
+      }
+
+      *,
+      *::before,
+      *::after{
+        animation:none!important;
+        transition:none!important;
+      }
+
+      .reveal{
+        opacity:1;
+        transform:none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-personal">Свадебное приглашение</div>
+
+      <h1>Никита <span aria-hidden="true">&</span> Виктория</h1>
+
+      <div class="hero-subtitle">
+        приглашаем вас разделить с нами этот день
+      </div>
+
+      <div class="hero-date">05 · 09 · 2026</div>
+
+      <a class="open-invite" href="#invitation">
+        Открыть приглашение
+      </a>
+    </div>
+
+    <div class="scroll-arrow" aria-hidden="true">⌄</div>
+  </section>
+
+
+  <!-- ================= ОБРАЩЕНИЕ ================= -->
+  <section class="invitation" id="invitation">
+    <div class="container reveal">
+      <div class="invitation-card">
+
+        <div class="monogram">НВ</div>
+
+        <div class="eyebrow">
+          Наша свадьба
+        </div>
+
+        <h2 class="guest-greeting" id="guestGreeting">
+          Дорогие гости!
+        </h2>
+
+        <p class="invitation-copy">
+          С огромным удовольствием приглашаем вас разделить с нами один из самых
+          особенных дней нашей жизни — день, когда мы скажем друг другу «да».
+          Нам будет очень приятно провести этот праздник рядом с вами.
+        </p>
+
+        <div class="signature">
+          Никита & Виктория
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= ДЕТАЛИ ================= -->
+  <section class="details-section center" id="details">
+    <div class="container reveal">
+
+      <div class="eyebrow">
+        Несколько слов
+      </div>
+
+      <h2>
+        Детали
+      </h2>
+
+      <div class="details-card">
+
+        <div class="cheddar-photo">
+          <img
+            src="images/cheddar.png"
+            alt="Наш кот Чеддер"
+            loading="lazy">
+        </div>
+
+        <p class="details-text">
+          Ваше присутствие — самый важный подарок для нас.
+          Если вы захотите сделать нам дополнительный комплимент,
+          будем благодарны, если <strong>вместо цветов</strong>
+          вы выберете бутылочку хорошего алкоголя или подарочный сертификат.
+          Цветы нам, к сожалению, негде разместить, а дома у нас появился
+          очень любопытный кот Чеддер — поэтому так будет спокойнее
+          и для нас, и для него.
+        </p>
+
+        <div class="cheddar-note">
+          Чеддер обещает дождаться нас дома 🐾
+        </div>
+
+        <div class="details-divider"></div>
+
+        <div class="dress-reminder">
+
+          <h3>
+            Напоминаем о дресс-коде
+          </h3>
+
+          <p>
+            Будем рады, если в этот день вы поддержите цветовую палитру
+            нашей свадьбы. Не обязательно собирать образ только из этих оттенков —
+            достаточно небольшого акцента или близкой цветовой гаммы.
+          </p>
+
+          <div class="colors" aria-label="Цветовая палитра свадьбы">
+            <div class="color" title="Чёрный" style="background:#111"></div>
+            <div class="color" title="Коричневый" style="background:#6a4f3a"></div>
+            <div class="color" title="Тауп" style="background:#8b7261"></div>
+            <div class="color" title="Бежевый" style="background:#dcd0b9"></div>
+            <div class="color" title="Молочный" style="background:#f3e9de"></div>
+            <div class="color" title="Светлый шалфей" style="background:#b9c8ad"></div>
+            <div class="color" title="Оливковый" style="background:#66724b"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= ПОДТВЕРЖДЕНИЕ ================= -->
+  <section class="rsvp-section center" id="rsvp">
+    <div class="container reveal">
+
+      <div class="eyebrow">
+        Нам важно знать
+      </div>
+
+      <h2>
+        Подтвердите присутствие
+      </h2>
+
+      <p class="lead" id="rsvpLead">
+        Пожалуйста, отметьте, кто из приглашённых сможет быть с нами.
+      </p>
+
+      <div class="rsvp-card">
+
+        <form id="rsvpForm" novalidate>
+
+          <div class="rsvp-invited" id="rsvpInvited">
+            Приглашение для вас
+          </div>
+
+          <div id="fallbackNameWrap" hidden>
+            <label class="field-label" for="fallbackName">
+              Ваше имя
+            </label>
+
+            <input
+              class="fallback-name"
+              id="fallbackName"
+              autocomplete="given-name"
+              placeholder="Например: Егор">
+          </div>
+
+          <span class="field-label">
+            Кто сможет прийти?
+          </span>
+
+          <div class="choices" id="attendanceChoices"></div>
+
+          <label class="choice decline" id="declineChoice">
+            <input type="checkbox" id="noneAttending">
+            <span id="declineText">
+              К сожалению, никто из приглашённых не сможет прийти
+            </span>
+          </label>
+
+          <label class="field-label" for="comment">
+            Комментарий
+            <span style="font-weight:300;color:var(--muted)">
+              (необязательно)
+            </span>
+          </label>
+
+          <textarea
+            id="comment"
+            maxlength="500"
+            placeholder="Если хотите что-то добавить"></textarea>
+
+          <input
+            class="honeypot"
+            id="company"
+            name="company"
+            type="text"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true">
+
+          <button
+            class="submit-btn"
+            id="submitBtn"
+            type="submit">
+            Отправить ответ
+          </button>
+
+          <div
+            class="form-message"
+            id="formMessage"
+            role="status"
+            aria-live="polite"></div>
+
+        </form>
+
+        <div
+          class="success-box"
+          id="successBox"
+          hidden>
+
+          <div class="heart">
+            ♡
+          </div>
+
+          <h3>
+            Спасибо за ответ!
+          </h3>
+
+          <p id="successText">
+            Мы получили ваше подтверждение.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="footer-note">
+        Никита & Виктория · 05.09.2026
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+
+<script>
+  /* ============================================================
+     ПЕРСОНАЛЬНЫЕ ССЫЛКИ
+
+     Один гость:
+     ?guest=Егор
+
+     Два гостя:
+     ?guest=Егор&guest2=Анна
+
+     Пример:
+     https://bobrovnikita.github.io/weedingday/?guest=Егор&guest2=Анна
+
+     В ссылке нужны ТОЛЬКО ИМЕНА, без фамилий.
+
+     Старые ссылки с фамилиями тоже не сломаются:
+     ?guest=Егор%20Анашкин
+     на странице всё равно будет показано только «Егор».
+     ============================================================ */
+
+  const params = new URLSearchParams(window.location.search);
+
+  function safeDecode(value){
+    let result = value || "";
+
+    for(let i = 0; i < 2; i++){
+      try{
+        const decoded = decodeURIComponent(result);
+
+        if(decoded === result){
+          break;
+        }
+
+        result = decoded;
+      }catch{
+        break;
+      }
+    }
+
+    return result;
+  }
+
+  function cleanName(value){
+    const decoded = safeDecode(value)
+      .replace(/\+/g," ")
+      .replace(/\s+/g," ")
+      .trim();
+
+    if(!decoded){
+      return "";
+    }
+
+    const first = decoded.split(" ")[0].slice(0,40);
+
+    return first.charAt(0).toUpperCase() + first.slice(1);
+  }
+
+  function joinNames(names){
+    if(names.length === 0){
+      return "";
+    }
+
+    if(names.length === 1){
+      return names[0];
+    }
+
+    return `${names[0]} и ${names[1]}`;
+  }
+
+  const invitees = [];
+
+  const guest1 = cleanName(params.get("guest"));
+  const guest2 = cleanName(params.get("guest2"));
+
+  if(guest1){
+    invitees.push(guest1);
+  }
+
+  if(
+    guest2 &&
+    guest2.toLowerCase() !== guest1.toLowerCase()
+  ){
+    invitees.push(guest2);
+  }
+
+  /* Дополнительно поддерживается:
+     ?guests=Егор|Анна
+  */
+  if(
+    invitees.length === 0 &&
+    params.get("guests")
+  ){
+    params
+      .get("guests")
+      .split("|")
+      .map(cleanName)
+      .filter(Boolean)
+      .slice(0,2)
+      .forEach(name => {
+        if(
+          !invitees.some(
+            existing => existing.toLowerCase() === name.toLowerCase()
+          )
+        ){
+          invitees.push(name);
+        }
+      });
+  }
+
+  const invitationId = (params.get("id") || params.get("invite") || "")
+    .replace(/\s+/g," ")
+    .trim()
+    .slice(0,120);
+
+
+  /* ================= ПЕРСОНАЛЬНОЕ ОБРАЩЕНИЕ ================= */
+
+  const guestGreeting = document.getElementById("guestGreeting");
+  const rsvpInvited = document.getElementById("rsvpInvited");
+  const rsvpLead = document.getElementById("rsvpLead");
+  const fallbackNameWrap = document.getElementById("fallbackNameWrap");
+  const fallbackName = document.getElementById("fallbackName");
+  const attendanceChoices = document.getElementById("attendanceChoices");
+  const noneAttending = document.getElementById("noneAttending");
+  const declineText = document.getElementById("declineText");
+
+  if(invitees.length){
+    guestGreeting.textContent = `${joinNames(invitees)}!`;
+    rsvpInvited.textContent = `Приглашены: ${joinNames(invitees)}`;
+
+    if(invitees.length === 1){
+      rsvpLead.textContent = "Пожалуйста, подтвердите, сможете ли вы быть с нами.";
+      declineText.textContent = "К сожалению, я не смогу прийти";
+    }else{
+      rsvpLead.textContent = "Пожалуйста, отметьте, кто из вас сможет быть с нами.";
+      declineText.textContent = "К сожалению, никто из нас не сможет прийти";
+    }
+  }else{
+    guestGreeting.textContent = "Дорогие гости!";
+    rsvpInvited.textContent = "Укажите ваше имя";
+    rsvpLead.textContent = "Пожалуйста, подтвердите, сможете ли вы быть с нами.";
+    fallbackNameWrap.hidden = false;
+    declineText.textContent = "К сожалению, я не смогу прийти";
+  }
+
+
+  /* ================= ВАРИАНТЫ ПРИСУТСТВИЯ ================= */
+
+  function renderAttendanceChoices(){
+    attendanceChoices.innerHTML = "";
+
+    const list = invitees.length
+      ? invitees
+      : [""];
+
+    list.forEach((name,index) => {
+      const label = document.createElement("label");
+      label.className = "choice";
+
+      const input = document.createElement("input");
+      input.type = "checkbox";
+      input.className = "attendee-check";
+      input.dataset.index = String(index);
+      input.value = name;
+
+      const span = document.createElement("span");
+
+      span.textContent = name
+        ? `${name} — сможет прийти`
+        : "Я смогу прийти";
+
+      input.addEventListener("change",() => {
+        if(input.checked){
+          noneAttending.checked = false;
+        }
+      });
+
+      label.append(input,span);
+      attendanceChoices.appendChild(label);
+    });
+  }
+
+  renderAttendanceChoices();
+
+  noneAttending.addEventListener("change",() => {
+    if(noneAttending.checked){
+      document
+        .querySelectorAll(".attendee-check")
+        .forEach(cb => cb.checked = false);
+    }
+  });
+
+
+  /* ================= REVEAL ================= */
+
+  const revealElements = document.querySelectorAll(".reveal");
+
+  if("IntersectionObserver" in window){
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("show");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },{
+      threshold:.12
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  }else{
+    revealElements.forEach(el => el.classList.add("show"));
+  }
+
+
+  /* ============================================================
+     GOOGLE APPS SCRIPT RSVP ENDPOINT
+
+     Уже оставлен ваш текущий опубликованный адрес.
+     ============================================================ */
+
+  const RSVP_ENDPOINT =
+    "https://script.google.com/macros/s/AKfycbwsQzm5xB2stdBifstxTkj5SddgTteuzmaZc3uZZ100KHk2Es5_wjePDosxc8YrWRm-PA/exec";
+
+
+  /* ================= ОТПРАВКА RSVP ================= */
+
+  const form = document.getElementById("rsvpForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const formMessage = document.getElementById("formMessage");
+  const successBox = document.getElementById("successBox");
+  const successText = document.getElementById("successText");
+
+  form.addEventListener("submit",async event => {
+    event.preventDefault();
+
+    formMessage.textContent = "";
+
+    if(document.getElementById("company").value){
+      return;
+    }
+
+    let actualInvitees = [...invitees];
+
+    if(actualInvitees.length === 0){
+      const fallback = cleanName(fallbackName.value);
+
+      if(!fallback){
+        formMessage.textContent = "Укажите ваше имя.";
+        fallbackName.focus();
+        return;
+      }
+
+      actualInvitees = [fallback];
+    }
+
+    const checkedIndexes = [
+      ...document.querySelectorAll(".attendee-check:checked")
+    ].map(cb => Number(cb.dataset.index));
+
+    const attending = checkedIndexes
+      .map(index => actualInvitees[index])
+      .filter(Boolean);
+
+    if(
+      !noneAttending.checked &&
+      attending.length === 0
+    ){
+      formMessage.textContent =
+        actualInvitees.length === 1
+          ? "Выберите, сможете ли вы прийти."
+          : "Отметьте, кто сможет прийти, или выберите вариант «никто из нас не сможет прийти».";
+
+      return;
+    }
+
+    const absent = actualInvitees.filter(
+      name => !attending.includes(name)
+    );
+
+    const status =
+      noneAttending.checked
+        ? "Не придут"
+        : attending.length === actualInvitees.length
+          ? "Придут все"
+          : "Придут не все";
+
+    const payload = {
+      invitationId,
+      invited:actualInvitees,
+      attending,
+      absent,
+      guestsCount:attending.length,
+      status,
+      comment:document
+        .getElementById("comment")
+        .value
+        .trim()
+        .slice(0,500),
+      page:window.location.href.split("#")[0],
+      submittedAt:new Date().toISOString()
+    };
+
+    if(
+      !RSVP_ENDPOINT ||
+      RSVP_ENDPOINT.includes("PASTE_YOUR")
+    ){
+      formMessage.textContent =
+        "Форма ещё не подключена к обработчику RSVP.";
+
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Отправляем…";
+
+    try{
+      await fetch(RSVP_ENDPOINT,{
+        method:"POST",
+        mode:"no-cors",
+        headers:{
+          "Content-Type":"text/plain;charset=utf-8"
+        },
+        body:JSON.stringify(payload)
+      });
+
+      form.hidden = true;
+      successBox.hidden = false;
+
+      successText.textContent =
+        noneAttending.checked
+          ? "Спасибо, что сообщили. Нам будет вас не хватать 🤍"
+          : "Спасибо! Мы очень рады и будем ждать вас 5 сентября 🤍";
+
+    }catch(error){
+      console.error(error);
+
+      formMessage.textContent =
+        "Не удалось отправить ответ. Попробуйте ещё раз чуть позже.";
+
+    }finally{
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Отправить ответ";
+    }
+  });
+</script>
+
+</body>
+</html>
